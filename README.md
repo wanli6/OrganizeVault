@@ -1,5 +1,7 @@
 # OrganizeVault
 
+![OrganizeVault hero](assets/readme-hero.png)
+
 A Claude Code skill for organizing Markdown/Obsidian vaults into a topic-based directory structure with MOC (Map of Content) files.
 
 ## What it does
