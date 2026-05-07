@@ -8,6 +8,7 @@ A Claude Code skill for turning Markdown/Obsidian vaults into reviewable topic m
 
 - **Initial setup**: scans note titles, proposes a topic map, moves notes into the matching topic folders, and creates a `MOC.md` in each directory plus a root index
 - **Incremental maintenance**: detects new notes via `git status`, proposes where they fit in the existing map, moves them after confirmation, and updates the corresponding `MOC.md`
+- **Link format**: uses Obsidian-style `[[wikilinks]]` by default, can explicitly use standard Markdown links, and otherwise follows the dominant link format in existing MOC files
 
 Note content is never modified — only file locations and MOC files change. All changes are git-tracked.
 

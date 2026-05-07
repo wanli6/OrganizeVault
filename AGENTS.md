@@ -49,11 +49,16 @@ The core deliverable is `skills/map-my-vault/SKILL.md` — a Codex skill that ru
 2. Reads existing MOC files to understand the current topic structure
 3. Reads each new note's full content, then decides which MOC(s) it belongs to
 4. Shows a preview of all changes before writing anything
-5. Appends `[[wikilinks]]` to the appropriate MOC files after user confirmation
+5. Appends links to the appropriate MOC files after user confirmation. `[[wikilinks]]` are the default; standard Markdown links can be requested explicitly, and existing MOC link style is followed when detectable.
 
 **Two modes**:
 - **Incremental** (MOC files already exist): adds new notes to existing MOCs
 - **Initialize** (no MOC files yet): proposes a topic structure from note titles, then populates MOC files in batches
+
+**Link format**:
+- Default: Obsidian-style `[[wikilinks]]`
+- Optional: standard Markdown links, e.g. `[python-async](python-async.md)`, for non-Obsidian readers
+- If the user does not specify a format, scan all existing MOC files and use the vault's dominant link style; fall back to wikilinks when there is no clear signal
 
 **Rollback**: all changes are git-tracked; `git revert` is the only rollback mechanism needed.
 
