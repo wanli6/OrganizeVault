@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**OrganizeVault** is a knowledge base organization assistant — a tool to help personal note collections (e.g. Obsidian vaults) become more navigable, trustworthy, and maintainable over time.
+**MapMyVault** is a knowledge base mapping assistant — a tool to help personal note collections (e.g. Obsidian vaults) become more navigable, trustworthy, and maintainable over time.
 
 The project is currently in the **design phase**. There is no source code yet. The sole artifact is `doc/design.md` (written in Chinese), which defines the product vision, philosophy, and design principles.
 
@@ -31,18 +31,18 @@ To install the skill so Claude Code can discover and invoke it:
 ./install.sh
 ```
 
-This copies `skills/organize-vault/SKILL.md` to `~/.claude/skills/organize-vault/SKILL.md`. Restart Claude Code after installing. The skill then becomes available as `/organize-vault`.
+This copies `skills/map-my-vault/SKILL.md` to `~/.claude/skills/map-my-vault/SKILL.md`. Restart Claude Code after installing. The skill then becomes available as `/map-my-vault`.
 
 To uninstall:
 ```bash
-rm -rf ~/.claude/skills/organize-vault
+rm -rf ~/.claude/skills/map-my-vault
 ```
 
-## Skill: organize-vault
+## Skill: map-my-vault
 
-The core deliverable is `skills/organize-vault/SKILL.md` — a Claude Code skill that runs entirely via file system operations and Claude's own reasoning. No external dependencies, no separate runtime.
+The core deliverable is `skills/map-my-vault/SKILL.md` — a Claude Code skill that runs entirely via file system operations and Claude's own reasoning. No external dependencies, no separate runtime.
 
-**Invoke**: `/organize-vault`, or ask Claude to "整理 vault"、"归类新笔记"、"初始化 MOC".
+**Invoke**: `/map-my-vault`, or ask Claude to "整理 vault"、"归类新笔记"、"初始化 MOC".
 
 **What it does**:
 1. Uses `git status` to find new `.md` files since the last commit
@@ -62,7 +62,7 @@ The core deliverable is `skills/organize-vault/SKILL.md` — a Claude Code skill
 ## Architecture
 
 The system is intentionally minimal:
-- `skills/organize-vault/SKILL.md`: the skill definition — describes the full workflow for Claude
+- `skills/map-my-vault/SKILL.md`: the skill definition — describes the full workflow for Claude
 - `install.sh`: copies the skill to `~/.claude/skills/` so Claude Code can discover it
 - No code library, no MCP server, no embedding model
 - Claude does all reasoning; standard file tools (Read, Write, Edit, Bash) do the I/O

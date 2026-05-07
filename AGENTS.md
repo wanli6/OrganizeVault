@@ -4,7 +4,7 @@ This file provides guidance to Codex (Codex.ai/code) when working with code in t
 
 ## Project Overview
 
-**OrganizeVault** is a knowledge base organization assistant — a tool to help personal note collections (e.g. Obsidian vaults) become more navigable, trustworthy, and maintainable over time.
+**MapMyVault** is a knowledge base mapping assistant — a tool to help personal note collections (e.g. Obsidian vaults) become more navigable, trustworthy, and maintainable over time.
 
 The project is currently in the **design phase**. There is no source code yet. The sole artifact is `doc/design.md` (written in Chinese), which defines the product vision, philosophy, and design principles.
 
@@ -31,18 +31,18 @@ To install the skill so Codex can discover and invoke it:
 ./install.sh
 ```
 
-This copies `skills/organize-vault/SKILL.md` to `~/.Codex/skills/organize-vault/SKILL.md`. Restart Codex after installing. The skill then becomes available as `/organize-vault`.
+This copies `skills/map-my-vault/SKILL.md` to `~/.Codex/skills/map-my-vault/SKILL.md`. Restart Codex after installing. The skill then becomes available as `/map-my-vault`.
 
 To uninstall:
 ```bash
-rm -rf ~/.Codex/skills/organize-vault
+rm -rf ~/.Codex/skills/map-my-vault
 ```
 
-## Skill: organize-vault
+## Skill: map-my-vault
 
-The core deliverable is `skills/organize-vault/SKILL.md` — a Codex skill that runs entirely via file system operations and Codex's own reasoning. No external dependencies, no separate runtime.
+The core deliverable is `skills/map-my-vault/SKILL.md` — a Codex skill that runs entirely via file system operations and Codex's own reasoning. No external dependencies, no separate runtime.
 
-**Invoke**: `/organize-vault`, or ask Codex to "整理 vault"、"归类新笔记"、"初始化 MOC".
+**Invoke**: `/map-my-vault`, or ask Codex to "整理 vault"、"归类新笔记"、"初始化 MOC".
 
 **What it does**:
 1. Uses `git status` to find new `.md` files since the last commit
@@ -62,7 +62,7 @@ The core deliverable is `skills/organize-vault/SKILL.md` — a Codex skill that 
 ## Architecture
 
 The system is intentionally minimal:
-- `skills/organize-vault/SKILL.md`: the skill definition — describes the full workflow for Codex
+- `skills/map-my-vault/SKILL.md`: the skill definition — describes the full workflow for Codex
 - `install.sh`: copies the skill to `~/.Codex/skills/` so Codex can discover it
 - No code library, no MCP server, no embedding model
 - Codex does all reasoning; standard file tools (Read, Write, Edit, Bash) do the I/O

@@ -1,10 +1,10 @@
 {
-  "name": "organize-vault",
+  "name": "map-my-vault",
   "version": "1.1.0",
-  "description": "A Claude Code skill for organizing Markdown vaults with MOC directory structure",
-  "homepage": "https://github.com/wanli6/OrganizeVault",
-  "repository": "https://github.com/wanli6/OrganizeVault",
+  "description": "A Claude Code skill for mapping Markdown vaults with reviewable MOC topic maps",
+  "homepage": "https://github.com/wanli6/MapMyVault",
+  "repository": "https://github.com/wanli6/MapMyVault",
   "license": "MIT",
-  "keywords": ["obsidian", "vault", "moc", "knowledge-base", "organize"],
+  "keywords": ["obsidian", "vault", "moc", "knowledge-base", "map"],
   "skills": ["./skills/"]
 }

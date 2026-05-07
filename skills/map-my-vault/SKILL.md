@@ -1,21 +1,21 @@
 ---
-name: organize-vault
+name: map-my-vault
 description: 扫描 Markdown vault 中的笔记，按语义主题生成目录层级，将笔记移动到
   对应目录，并在根目录和每个主题目录下创建 MOC.md。增量维护模式下检测 git 新增笔记，
   移动归类并更新对应 MOC.md。笔记内容始终不变，git 是唯一回退机制。
-origin: OrganizeVault
+origin: MapMyVault
 version: "1.1.0"
 license: MIT
-homepage: https://github.com/wanli6/OrganizeVault
+homepage: https://github.com/wanli6/MapMyVault
 metadata:
   openclaw:
     emoji: "🗂️"
     os: ["darwin", "linux", "win32"]
 ---
 
-# organize-vault
+# map-my-vault
 
-知识库目录结构生成与 MOC 维护助手。
+知识库主题地图生成与 MOC 维护助手。
 
 ## When to Use
 
