@@ -17,12 +17,12 @@ Note content is never modified — only file locations and MOC files change. All
 clawhub install organize-vault
 ```
 
-### Manual (Claude Code)
+### Via curl (Claude Code)
 
 ```bash
-git clone https://github.com/wanli6/OrganizeVault.git
-cd OrganizeVault
-./install.sh
+mkdir -p ~/.claude/skills/organize-vault && \
+curl -fsSL https://raw.githubusercontent.com/wanli6/OrganizeVault/main/skills/organize-vault/SKILL.md \
+  -o ~/.claude/skills/organize-vault/SKILL.md
 ```
 
 Restart Claude Code after installing. The skill is available as `/organize-vault`.
