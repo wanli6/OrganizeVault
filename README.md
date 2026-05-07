@@ -1,15 +1,23 @@
 # OrganizeVault
 
-A Claude Code skill for maintaining MOC (Map of Content) structure in Markdown/Obsidian vaults.
+A Claude Code skill for organizing Markdown/Obsidian vaults into a topic-based directory structure with MOC (Map of Content) files.
 
 ## What it does
 
-- **Incremental maintenance**: detects new notes via `git status`, reads existing MOC files, suggests where each note belongs, and appends `[[wikilinks]]` after your confirmation
-- **Initial setup**: when no MOC files exist, scans all note titles, proposes a topic structure, then populates MOC files in batches
+- **Initial setup**: scans all note titles, proposes a topic directory structure, moves notes into the right folders, and creates a `MOC.md` in each directory plus a root index
+- **Incremental maintenance**: detects new notes via `git status`, moves them to the matching topic directory, and updates the corresponding `MOC.md`
 
-It only appends links to MOC files — note content is never touched.
+Note content is never modified — only file locations and MOC files change. All changes are git-tracked.
 
 ## Install
+
+### Via OpenClaw
+
+```bash
+clawhub install organize-vault
+```
+
+### Manual (Claude Code)
 
 ```bash
 git clone https://github.com/wanli6/OrganizeVault.git
@@ -17,7 +25,7 @@ cd OrganizeVault
 ./install.sh
 ```
 
-Restart Claude Code. The skill is now available as `/organize-vault`.
+Restart Claude Code after installing. The skill is available as `/organize-vault`.
 
 ## Usage
 
@@ -29,7 +37,7 @@ Open Claude Code in your vault directory and run:
 
 Or say: "整理一下 vault"、"把新笔记归类"、"初始化 MOC 结构"
 
-Claude will ask for your vault path if needed, show a preview of every change, and wait for confirmation before writing anything. All changes are git-tracked and can be reverted with `git revert`.
+Claude will ask for your vault path if needed, show a full preview of every file move and MOC change, and wait for your confirmation before writing anything.
 
 ## Requirements
 

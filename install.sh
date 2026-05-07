@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # OrganizeVault install — copies the organize-vault skill to ~/.claude/skills/
+# Alternative: install via OpenClaw with `clawhub install organize-vault`
 
 set -euo pipefail
 
